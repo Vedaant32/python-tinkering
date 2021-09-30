@@ -23,18 +23,18 @@ while "1" != input("press 1 when signed in: "):
     pass
 for link in links:
     try:
-        print("accessing link ", link)
+        print("Accessing link", link)
         driver.get(link)
         sleep(2)
         el = driver.find_element_by_class_name("react-button__trigger")
         if "false" == el.get_attribute("aria-pressed"):
-            print("liking")
+            print("Liking")
             el.click()
-            print("liked")
+            print("Liked")
             sleep(1)
         else:
-            print("already processed link ", link)
+            print("Already Processed Link ", link)
     except Exception as e:
-        print("error processing link\nlink: ", link, "\nerror", e)
+        print("Error Processing Link\nlink: ", link, "\nerror", e)
 
 driver.close()
